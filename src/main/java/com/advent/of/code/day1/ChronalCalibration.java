@@ -1,13 +1,13 @@
 package com.advent.of.code.day1;
 
+import java.util.stream.Stream;
+
 public class ChronalCalibration {
 
-    private int frequency;
+    private ChronalCalibration() {
+    }
 
-    public int calibrateFrequency(int... frequencyChanges) {
-        for (int c : frequencyChanges) {
-            frequency += c;
-        }
-        return frequency;
+    public static int calibrateFrequency(Stream<Integer> frequencyChanges) {
+        return frequencyChanges.mapToInt(value -> value).sum();
     }
 }
